@@ -33,34 +33,61 @@ public class Project {
 
     }
     public static void main( String[] args){
+        Scanner scanner= new Scanner(System.in);
         ArrayList<String> course_name = new ArrayList<>();
         ArrayList<String> course_credit = new ArrayList<>();
         ArrayList<String> professor = new ArrayList<>();
         ArrayList<String> timeoffered = new ArrayList<>();
-        System.out.println("How many courses do u want to add");
-        Scanner scanner= new Scanner(System.in);
-        int input= scanner.nextInt();
-        scanner.nextLine();
-        for (int i=0; i< input; i++){
-            System.out.println("Enter the course name:");
+        ArrayList<String> prior_courses = new ArrayList<>();
+        int year = 2023;
+        System.out.print("How many courses have you taken so far? ");
+        int num_prior_courses = scanner.nextInt();
+        String prev_course;
+        for (int i = 0; i < num_prior_courses; i++){
+            System.out.print("Enter course: ");
+            prev_course = scanner.nextLine();
+        }
+        System.out.print("How many semesters do you have left at Smith (not including this semester)? ");
+        int semesters_left = scanner.nextInt();
+        String season = "Fall";
+        for(int j = 0; j < semesters_left; j++){
+            System.out.print("How many courses do you want to add for " + season + year + "?");
+            int input= scanner.nextInt();
+            scanner.nextLine();
+            for (int i = 0; i < input; i++){
+            System.out.print("Enter the course name: ");
             String course_input= scanner.nextLine();
             course_name.add(course_input);
-            System.out.println("Enter the credit numbers");
+            System.out.print("Does this course have any prerequisite courses? (yes or no) ");
+            String prereq = scanner.nextLine();
+            prereq.toLowerCase();
+            if (prereq.equals("yes")){
+                System.out.print("How many prerequisite courses does " + course_input + " have? ");
+                int num_prereq = scanner.nextInt();
+                String this_prereq;
+                for (int k = 0; k < num_prereq; k++){
+                    System.out.print("Enter prerequisite course: ");
+                    this_prereq = scanner.nextLine();
+                    if (prior_courses.contains(this_prereq)){
+                        continue;
+                    } else{
+                        System.out.print("You cannot take " + course_input + " because you have not taken " + this_prereq + ".");
+                        break;
+                    }
+                }
+            }
+
+            System.out.print("Enter the credit numbers: ");
             String credit_input= scanner.nextLine();
             course_credit.add(credit_input);
-            System.out.println("Enter the professor name:");
-            String professor_input= scanner.nextLine();
-            professor.add(professor_input);
-            System.out.println("When is it offered Spring or Fall?");
-            String semester= scanner.nextLine();
-            // if (scanner.get(i)equals("Fall"));
-            timeoffered.add(semester);
+            if (j % 2 == 0){
+                season = "Spring ";
+            } else{
+                season = "Fall ";
+            }
         }
-        // if(timeoffered.get(i).equals("Fall")){
-        //     ArrayList<String> fallsemester= new ArrayList<>();
-        //     fallsemester.add(timeoffered.get(i));
-        //     timeoffered.remove(i);
-        // }
+    }
+       
 
         
         // ArrayList<String> course_name = new ArrayList<>();
