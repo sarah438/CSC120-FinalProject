@@ -87,5 +87,11 @@ public class Major{
        
     }
     
+    public String toString(){
+        for(int i = 0; i < this.majorCourses.size()){
+            System.out.println(Integer.toString(i + 1)  + ". " + this.majorCourses.get(i));
+        }
+    }
+    
 
 }
