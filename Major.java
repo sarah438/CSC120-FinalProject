@@ -1,73 +1,75 @@
 import java.util.Hashtable;
 import java.util.ArrayList;
+import java.util.Scanner;
 public class Major{
     private Hashtable<Course, Boolean> classes;
+    private String name= "CSC mAJOR";
 
     public Major(){
         this.classes= new Hashtable< Course, Boolean>();
         ArrayList<Course> preReq = new ArrayList<>();
-        ArrayList<Course> majorCourses = new ArrayList<>();
+        
 
         Course c_110 = new Course("CSC 110", 4, "Shinyoung Cho", preReq);
         this.classes.put(c_110,false);
-        majorCourses.add(c_110);
+        
 
         Course m_111 = new Course("MTH 111", 4, "Jennifer Beichman", preReq);
         this.classes.put(m_111, false);
-        majorCourses.add(m_111);
+       
 
         preReq.add(c_110);
         Course c_120 = new Course("CSC 120", 4, "Jordan Crouser", preReq);
         this.classes.put(c_120, false);
-        majorCourses.add(c_120);
+        
 
         preReq.clear();
         Course m_153 = new Course("MTH 153", 4, "Ileanu Vasu", preReq);
         this.classes.put(m_153, false);
-        majorCourses.add(m_153);
+        
 
         preReq.clear();
         preReq.add(c_120);
         Course c_210 = new Course("CSC 210", 4, "Nicholas Howe", preReq);
         this.classes.put(c_210, false);
-        majorCourses.add(c_210);
+        
 
         preReq.clear();
         preReq.add(c_210);
         Course c_231 = new Course("CSC 231", 4, "Michael Robson", preReq);
         this.classes.put(c_231, false);
-        majorCourses.add(c_231);
+        
 
         preReq.clear();
         preReq.add(c_120);
         preReq.add(m_153);
         Course c_250 = new Course("CSC 250", 4, "Pablo Bolton", preReq);
         this.classes.put(c_250, false);
-        majorCourses.add(c_250);
+        
 
         preReq.clear();
         preReq.add(c_110);
         preReq.add(m_111);
         Course c_240 = new Course("CSC 240", 4, "Nicholas Howe", preReq);
         this.classes.put(c_240, false);
-        majorCourses.add(c_240);
+       
 
         preReq.clear();
         preReq.add(c_210);
         Course c_251 = new Course("CSC 251", 4, "Shinyoung Cho", preReq);
         this.classes.put(c_251, false);
-        majorCourses.add(c_251);
+        
 
         Course c_223 = new Course("CSC 223", 4, "Johanna Brewer", preReq);
         this.classes.put(c_223, false);
-        majorCourses.add(c_223);
+        
 
 
         preReq.clear();
         preReq.add(c_231);
         Course c_262 = new Course("CSC 262", 4, "Jamie MacBeth", preReq);
         this.classes.put(c_262, false);
-        majorCourses.add(c_262);
+        
 
         preReq.clear();
         preReq.add(c_110);
@@ -79,28 +81,39 @@ public class Major{
         preReq.add(c_250);
         Course c_327 = new Course("CSC 327", 4, "Shinyoung Cho", preReq);
         this.classes.put(c_327, false);
-        majorCourses.add(c_327);
+        
 
 
 
 
        
     }
-    
-    // File course_info = new File("classes.txt");
-        // Scanner myReader = new Scanner(course_info);
-        // for (int i = 1; i < 60; i += 5){
-        //    Course nextCourse = new Course(myReader.nextLine);
-        // }
-        //while (myReader.hasNextLine()) {
-         //   String data = myReader.nextLine();
-         //   System.out.println(data);
-    
     public String toString(){
-        for(int i = 0; i < this.majorCourses.size()){
-            System.out.println(Integer.toString(i + 1)  + ". " + this.majorCourses.get(i));
+        String des= this.name;
+        for (Course c: this.classes.keySet()){
+            des+= "\n" + c.toString() +" [" + this.classes.get(c)+ "]";
         }
+        return des;
     }
-    
+    public void setTaken(){
+        Scanner scanner= new Scanner(System.in);
+        String response= " ";
+        for (Course c: this.classes.keySet()){
+            System.out.println("Have you taken this :"+ c.getTitle()+ " ? y or n");
+            response= scanner.nextLine();
+            if(response.contains("y")){
+                this.classes.replace(c,true);
+            }
+        }
+
+        
+    }
+    public static void main(String[] args) {
+        // Course c_120 = new Course("CSC 120", 4, "Jordan Crouser", null);
+
+        Major newmajor= new Major();
+        newmajor.setTaken();
+        System.out.println(newmajor);
+    }
 
 }
