@@ -87,6 +87,15 @@ public class Major{
        
     }
     
+    // File course_info = new File("classes.txt");
+        // Scanner myReader = new Scanner(course_info);
+        // for (int i = 1; i < 60; i += 5){
+        //    Course nextCourse = new Course(myReader.nextLine);
+        // }
+        //while (myReader.hasNextLine()) {
+         //   String data = myReader.nextLine();
+         //   System.out.println(data);
+    
     public String toString(){
         for(int i = 0; i < this.majorCourses.size()){
             System.out.println(Integer.toString(i + 1)  + ". " + this.majorCourses.get(i));
