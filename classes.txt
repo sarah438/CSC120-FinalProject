@@ -1,0 +1,59 @@
+CSC 110
+4
+Shinyoung Cho
+
+
+MTH 111
+4
+Jennifer Beichman
+
+
+CSC 120         
+4
+Jordon Crouser
+CSC 110
+
+MTH 153
+4
+Ileanu Vasu
+
+
+CSC 210
+4
+Nicholas Howe
+CSC 120
+
+CSC 231
+4
+Michael Robson
+CSC 210
+
+CSC 250         
+4       
+Pablo Bolton
+CSC 120, MTH 153
+
+CSC 240
+4
+Nicholas Howe
+CSC 110, MTH 111
+
+CSC 251
+4
+Shinyoung Cho
+CSC 210
+
+CSC 223
+4
+Johanna Brewer
+CSC 210
+
+CSC 262
+4
+Jamie MacBeth
+CSC 231
+
+CSC 327
+4
+Shinyoung Cho
+CSC 110, MTH 111, CSC 120, MTH 153, CSC 210, CSC 231, CSC 250
