@@ -26,6 +26,15 @@ public class Course {
         
 
     }
+    
+    /*
+     * This function is returning the this.title as our variable title is private
+     * returns this.title
+     */
+    public String getTitle(){
+        return this.title;
+    }
+    
     /*
      * This function return the prereqs ArrayList
      * @return this.prereqs
@@ -33,6 +42,7 @@ public class Course {
     public ArrayList<Course> getPrereqs(){
         return this.prereqs;
     }
+    
     /*
      * In this function we are returns if the value of the classes is true or false depending on if it has a prereqs.
      * then if the value is true then this canTake functions allows the person to take a course when it's called in Major.java
@@ -53,6 +63,27 @@ public class Course {
     public boolean isprereqs(Course c){
         return this.prereqs.contains(c);
     }
+    
+}
+
+    /*
+     * In this function we are changing the value of our original hashtable by seeing if our parameter equals to our Course c
+     * If the object o is the same as our c then we true else we return false if the two are differnt
+     * @Param Object o
+     * returns a boolean true or false depending if our Object o is the same as our Course c
+     */
+
+    public boolean equals(Object o){
+        if(o instanceof Course){
+            Course c= (Course)o;
+            return c.title.equals(this.title);
+        }else{
+            return false;
+        }
+    }
+
+
+
     /*
      * We first intialized a String called dec and set equal to the concatenate of this.title, this.credit, and this.professor
      * But first we have to check that the size of the Prereqs ArrayList is not zero as we then increment our dec into "\npreq:"
@@ -72,31 +103,9 @@ public class Course {
 
         return dec;
     }
-
-    /*
-     * In this function we are changing the value of our original hashtable by seeing if our parameter equals to our Course c
-     * If the object o is the same as our c then we true else we return false if the two are differnt
-     * @Param Object o
-     * returns a boolean true or false depending if our Object o is the same as our Course c
-     */
-
-    public boolean equals(Object o){
-        if(o instanceof Course){
-            Course c= (Course)o;
-            return c.title.equals(this.title);
-        }else{
-            return false;
-        }
-    }
-    /*
-     * This function is returning the this.title as our variable title is private
-     * returns this.title
-     */
-    public String getTitle(){
-        return this.title;
-    }
-
+    
 }
+    
 
     
 
