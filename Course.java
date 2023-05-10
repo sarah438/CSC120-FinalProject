@@ -9,9 +9,9 @@ public class Course {
      * This is the constractor class and in it we check if the givenpreqs does not equal zero
      * Then if it does not we loop over Course c in givenprereqs to add the our c into our prereqs ArrayList.
      * @param String title
-     * @Param int n_credits
-     * @Param String professor
-     * @Param ArrayList<Course> givenpreqs
+     * @param int n_credits
+     * @param String professor
+     * @param ArrayList<Course> givenpreqs
      */
 
     public Course(String title, int n_credits, String professor, ArrayList<Course> givenpreqs){
@@ -28,7 +28,7 @@ public class Course {
     }
     /*
      * This function return the prereqs ArrayList
-     * return this.prereqs
+     * @return this.prereqs
      */
     public ArrayList<Course> getPrereqs(){
         return this.prereqs;
@@ -36,18 +36,19 @@ public class Course {
     /*
      * In this function we are returns if the value of the classes is true or false depending on if it has a prereqs.
      * then if the value is true then this canTake functions allows the person to take a course when it's called in Major.java
-     * @Param ArrayList<Course> called classes
      * returns a boolean of if classes.containsAll(this.prereqs)
+     * @param ArrayList<Course> called classes
+     * @return classes.containsAll(this.prereqs)
      */
     public boolean canTake(ArrayList<Course>classes){
             return classes.containsAll(this.prereqs);
-       
-
     }
+    
     /*
      * This function also returns if a course has a prereqs that needs to be taken before taking the class
-     * @Param Course c
+     * @param Course c
      * returns if the course c has a prereqs by saying this.prereqs.contains(c)
+     * @return this.prereqs.contains(c)
      */
     public boolean isprereqs(Course c){
         return this.prereqs.contains(c);
