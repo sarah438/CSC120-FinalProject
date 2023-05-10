@@ -94,7 +94,7 @@ public class Major{
      * After incrementing our value des we enter if statement of when this.classes.get(c) is true then we increment the des to starting a new line and printing completed.
      * Else if the user has completed the prerequests for that course then we increment des and print out to the console great u satisfied the prereqs on a new line.
      * else if the user has not taken the prequests yet then we increment des and print out to the user missing + this.missingprereqs(c) on a new line.
-     * Finally this function returns the String des
+     * returns the String des
      */
 
     public String toString(){
@@ -167,7 +167,7 @@ public class Major{
          * Then we loop over Course c in this.classes.keySet() and then within the for loop we run an if statement to check if the value of c is true meaning the user has taken this course.
          * Then we add those classes into our ArrayLisst taken.
          * There are no parameters for this method.
-         * It returns the ArrayList we have stored in all of our taken classes and this ArrayList is called taken.
+         * returns the ArrayList we have stored in all of our taken classes and this ArrayList is called taken.
          */
         public ArrayList<Course> getCompletedcourse(){
             ArrayList<Course> taken= new ArrayList<>();
