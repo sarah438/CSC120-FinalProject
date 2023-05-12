@@ -41,6 +41,7 @@ public class Major{
         this.classes.put(c_210, false);
         
         preReq.clear();
+        preq.add(c_210);
         Course c_223 = new Course("C. CSC 223", 4, "Johanna Brewer", preReq);
         this.classes.put(c_223, false);
 
