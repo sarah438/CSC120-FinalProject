@@ -94,8 +94,8 @@ public class Major{
      * After that it loops over Course p in c.getPrereqs() then goes into an if statement checking if the value of cllasses.get(p) is false.
      * it does that to check if the person have not taken that especific prerequests.
      * then we add our p.getTitle() into our String missingClasses this way we would share with the user the title of the requirment they are missing.
-     * @ param Course c
-     *  returns the missingClasses
+     * @param Course c
+     * @return missingClasses
      */
     public String MissingPreReqs(Course c){
         String missingClasses = "";
@@ -143,6 +143,7 @@ public class Major{
          * Then we add those classes into our ArrayLisst taken.
          * There are no parameters for this method.
          * returns the ArrayList we have stored in all of our taken classes and this ArrayList is called taken.
+         * @return taken
          */
      public ArrayList<Course> getCompletedcourse(){
          ArrayList<Course> taken= new ArrayList<>();
@@ -159,7 +160,7 @@ public class Major{
      * After incrementing our value des we enter if statement of when this.classes.get(c) is true then we increment the des to starting a new line and printing completed.
      * Else if the user has completed the prerequests for that course then we increment des and print out to the console great u satisfied the prereqs on a new line.
      * else if the user has not taken the prequests yet then we increment des and print out to the user missing + this.missingprereqs(c) on a new line.
-     * returns the String des
+     * @return des
      */
 
     public String toString(){
