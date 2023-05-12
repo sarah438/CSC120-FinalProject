@@ -29,7 +29,7 @@ public class Course {
     
     /*
      * This function is returning the this.title as our variable title is private
-     * returns this.title
+     * @returns this.title
      */
     public String getTitle(){
         return this.title;
@@ -56,8 +56,8 @@ public class Course {
     
     /*
      * This function also returns if a course has a prereqs that needs to be taken before taking the class
-     * @param Course c
      * returns if the course c has a prereqs by saying this.prereqs.contains(c)
+     * @param Course c
      * @return this.prereqs.contains(c)
      */
     public boolean isprereqs(Course c){
@@ -69,8 +69,8 @@ public class Course {
     /*
      * In this function we are changing the value of our original hashtable by seeing if our parameter equals to our Course c
      * If the object o is the same as our c then we true else we return false if the two are differnt
-     * @Param Object o
-     * returns a boolean true or false depending if our Object o is the same as our Course c
+     * @param Object o
+     * @return a boolean depending if our Object o is the same as our Course c
      */
 
     public boolean equals(Object o){
@@ -89,7 +89,7 @@ public class Course {
      * But first we have to check that the size of the Prereqs ArrayList is not zero as we then increment our dec into "\npreq:"
      * Then it loops over Course c in the ArrayList of the this.prereqs and then would increment our original dec
      * Finally this function returns the String dec
-     * 
+     * @return dec
      */
     public String toString(){
         String dec= this.title.substring(3) + " ("+ this.credit + " credits, " + this.professor + ")";
