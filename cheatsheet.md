@@ -6,3 +6,7 @@ Note:  It's a good idea to also make this list available inside the game, in res
 # SPOILER ALERT
 
 If your game includes challenges that must be overcome to win, also list them below.
+
+
+
+Because this project is not a game, there is no list of commands the user can call.
